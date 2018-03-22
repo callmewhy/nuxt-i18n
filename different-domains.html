@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Options · nuxt-i18n</title>
+        <title>Different domains · nuxt-i18n</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,8 +61,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="configuration-example.html" />
     
-    <link rel="prev" href="configuration-example.html" />
+    
+    <link rel="prev" href="lang-switcher.html" />
     
 
     </head>
@@ -254,7 +256,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.10" data-path="different-domains.html">
+        <li class="chapter active" data-level="1.10" data-path="different-domains.html">
             
                 <a href="different-domains.html">
             
@@ -280,7 +282,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.12" data-path="options.html">
+        <li class="chapter " data-level="1.12" data-path="options.html">
             
                 <a href="options.html">
             
@@ -325,7 +327,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Options</a>
+        <a href="." >Different domains</a>
     </h1>
 </div>
 
@@ -340,115 +342,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="options">Options</h1>
-<table>
-<thead>
-<tr>
-<th>Option</th>
-<th>Type</th>
-<th>Default value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>locales</td>
-<td>Array</td>
-<td></td>
-<td>A list of objects that describes the locales available in your app, each object should contain at least a `code` key</td>
-</tr>
-<tr>
-<td>defaultLocale</td>
-<td>String</td>
-<td></td>
-<td>The app&apos;s default locale, URLs for this language won&apos;t be prefixed with the locale code</td>
-</tr>
-<tr>
-<td>vueI18n</td>
-<td>Object</td>
-<td></td>
-<td>Configuration options for vue-i18n, refer to [the doc](<a href="http://kazupon.github.io/vue-i18n/en/api.html#constructor-options%29\" target="_blank">http://kazupon.github.io/vue-i18n/en/api.html#constructor-options\</a> for supported options</td>
-</tr>
-<tr>
-<td>routes</td>
-<td>Object</td>
-<td></td>
-<td>Custom routing configuration, if routes are omitted, Nuxt&apos;s default routes are used</td>
-</tr>
-<tr>
-<td>ignorePaths</td>
-<td>Array</td>
-<td></td>
-<td>A list of paths that should not be localized</td>
-</tr>
-<tr>
-<td>noPrefixDefaultLocale</td>
-<td>Boolean</td>
-<td>true</td>
-<td>By default, paths generated for the default language don&apos;t contain a locale prefix, set this option to `false` to disable this behavior</td>
-</tr>
-<tr>
-<td>redirectRootToLocale</td>
-<td>String</td>
-<td></td>
-<td>Specify a locale to which the user should be redirected when visiting root URL (/)</td>
-</tr>
-<tr>
-<td>seo</td>
-<td>Boolean</td>
-<td>true</td>
-<td>Set to `false` to disable SEO metadata generation</td>
-</tr>
-<tr>
-<td>loadLanguagesAsync</td>
-<td>Boolean</td>
-<td>false</td>
-<td>If `true`, the module will attempt to asynchronously load translations from files defined in `langFiles`, when using this, `vueI18n.messages` can be omitted and language files should be referenced using a `langFile` key in `locales` objects</td>
-</tr>
-<tr>
-<td>langDir</td>
-<td>String</td>
-<td>lang/</td>
-<td>Directory in which translations files are stored (used when loading translations asynchronously)</td>
-</tr>
-<tr>
-<td>detectBrowserLanguage</td>
-<td>Boolean</td>
-<td>false</td>
-<td>Enables browser&apos;s language detection feature to automatically redirect users to their favorite language</td>
-</tr>
-<tr>
-<td>redirectCookieKey</td>
-<td>String</td>
-<td>&apos;redirected&apos;</td>
-<td>Name of the cookie that is set after a user first visits the app with detectBrowserLanguage enabled</td>
-</tr>
-<tr>
-<td>useRedirectCookie</td>
-<td>Boolean</td>
-<td>true</td>
-<td>Set to false to always trigger redirection based on browser&apos;s language (if detectBrowserLanguage is enabled)</td>
-</tr>
-<tr>
-<td>beforeLanguageSwitch</td>
-<td>Function</td>
-<td>(oldLocale, newLocale) =&gt; {}</td>
-<td>Callback called before changing the app&apos;s locale</td>
-</tr>
-<tr>
-<td>onLanguageSwitched</td>
-<td>Function</td>
-<td>(oldLocale, newLocale) =&gt; {}</td>
-<td>Callback called once the app&apos;s locale has been changed</td>
-</tr>
-<tr>
-<td>differentDomains</td>
-<td>Boolean</td>
-<td>false</td>
-<td>Enable this to have different domain names for each locale, you must define the domain name in the `locales` option for this to work</td>
-</tr>
-</tbody>
-</table>
+                                <h1 id="different-domains">Different domains</h1>
+<p>You might want to use a specific domain name for each language your app supports. To achieve this, enable <code>differentDomains</code> option and define every domain name in the <code>locales</code> option:</p>
+<pre class="language-"><code class="lang-js"><span class="token punctuation">{</span>
+  locales<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      code<span class="token punctuation">:</span> <span class="token string">&apos;en&apos;</span><span class="token punctuation">,</span>
+      domain<span class="token punctuation">:</span> <span class="token string">&apos;mydomain.com&apos;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      code<span class="token punctuation">:</span> <span class="token string">&apos;fr&apos;</span><span class="token punctuation">,</span>
+      domain<span class="token punctuation">:</span> <span class="token string">&apos;fr.mydomain.com&apos;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  differentDomains<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token comment" spellcheck="true">// Or enable the option in production only</span>
+  <span class="token comment" spellcheck="true">// differentDomains: (process.env.NODE_ENV === &apos;production&apos;)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>When using different domain names, your lang swicher should use regular <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">&gt;</span></span></code> tags:</p>
+<pre class="language-"><code class="lang-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span>
+  <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>locale in $i18n.locales<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">:href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>switchLocalePath(locale.code)<span class="token punctuation">&quot;</span></span>
+  <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>locale.code<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  {{ locale.code }}
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
 
                                 
                                 </section>
@@ -477,10 +396,14 @@
 
             
                 
-                <a href="configuration-example.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Configuration Example">
+                <a href="lang-switcher.html" class="navigation navigation-prev " aria-label="Previous page: Lang Switcher">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="configuration-example.html" class="navigation navigation-next " aria-label="Next page: Configuration Example">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -489,7 +412,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Options","level":"1.12","depth":1,"previous":{"title":"Configuration Example","level":"1.11","depth":1,"path":"configuration-example.md","ref":"configuration-example.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","theme-vuejs-2","-fontsettings","github"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/nuxt-community/nuxt-i18n"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"highlight":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/nuxt-community/nuxt-i18n/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"nuxt-i18n","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"options.md","mtime":"2018-03-22T19:58:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-22T20:01:22.099Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Different domains","level":"1.10","depth":1,"next":{"title":"Configuration Example","level":"1.11","depth":1,"path":"configuration-example.md","ref":"configuration-example.md","articles":[]},"previous":{"title":"Lang Switcher","level":"1.9","depth":1,"path":"lang-switcher.md","ref":"lang-switcher.md","articles":[]},"dir":"ltr"},"config":{"plugins":["edit-link","prism","theme-vuejs-2","-fontsettings","github"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"github":{"url":"https://github.com/nuxt-community/nuxt-i18n"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"highlight":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/nuxt-community/nuxt-i18n/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"nuxt-i18n","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":">3.0.0"},"file":{"path":"different-domains.md","mtime":"2018-03-22T19:58:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-22T20:01:22.099Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
